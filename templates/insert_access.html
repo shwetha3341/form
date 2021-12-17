@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Inserting the data into access records</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <select name="topic" id="topic">
+                {% for i in topics %}
+                 <option value="{{i}}">   
+                        {{i.topic_name}}        
+                </option>
+                {% endfor %}
+            </select>
+            <input type="text" name="name" id="name"><br>
+            <input type="url" name="url" id="url">
+            <input type="date" name="date" id="date"><br>
+
+            <input type="submit" value="submit">
+
+        </form>
+    </center>
+</body>
+</html>
